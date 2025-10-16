@@ -1,4 +1,12 @@
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Pressable,
+} from "react-native";
+
+import { Link } from "expo-router";
 
 import icedCoffeeImg from "../../assets/images/iced-coffee.png";
 
@@ -11,6 +19,11 @@ const app = () => {
         style={styles.image}
       >
         <Text style={styles.text}>Coffee Shop</Text>
+        <Link style={{ marginHorizontal: "auto" }} href="/contact" asChild>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Contact Us</Text>
+          </Pressable>
+        </Link>
       </ImageBackground>
     </View>
   );
@@ -32,5 +45,26 @@ const styles = StyleSheet.create({
     fontSize: 42,
     fontWeight: "bold",
     textAlign: "center",
+    marginBottom: 120,
+  },
+  link: {
+    color: "white",
+    fontSize: 42,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  button: {
+    height: 60,
+    borderRadius: 20,
+    justifyContent: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    padding: 6,
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+    pdding: 4,
   },
 });
