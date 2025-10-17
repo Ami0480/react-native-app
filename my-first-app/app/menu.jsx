@@ -30,7 +30,7 @@ export default function MenuScreen() {
   const footerComp = <Text style={{ marginTop: 10 }}>End of Menu</Text>;
 
   return (
-    <Container>
+    <Container style={{ flex: 1, backgroundColor: theme.background }}>
       <FlatList
         data={MENU_ITEMS}
         keyExtractor={(item) => item.id.toString()}
@@ -47,7 +47,7 @@ export default function MenuScreen() {
               <Text style={[styles.menuItemText, styles.menuItemTitle]}>
                 {item.title}
               </Text>
-              <Text styel={styles.menuItemText}>{item.description}</Text>
+              <Text style={styles.menuItemText}>{item.description}</Text>
             </View>
             <Image source={MENU_IMAGES[item.id - 1]} style={styles.menuImage} />
           </View>
@@ -93,7 +93,7 @@ function createStyles(theme, colorScheme) {
     },
     menuTextRow: {
       width: "65%",
-      paddingTop: 10,
+      paddingTop: 5,
       paddingLeft: 10,
       paddingRight: 5,
       flexGrow: 1,
@@ -101,8 +101,9 @@ function createStyles(theme, colorScheme) {
     menuItemTitle: {
       fontSize: 18,
       textDecorationLine: "underline",
+      marginTop: 5,
     },
-    menuItemText: { color: theme.text },
+    menuItemText: { color: theme.text, marginTop: 5 },
     menuImage: { width: 100, height: 100 },
   });
 }
